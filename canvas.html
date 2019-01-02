@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+</head>
+<body>
+<canvas id="c" width="200" height="200"></canvas>
+<script>
+	var c = document.querySelector("#c");
+	var ctx = c.getContext("2d");
+
+/*
+	var img = new Image();
+
+	img.onload = function() {
+		console.log("image loaded");
+		ctx.drawImage(img, 0, 0, c.width, c.height);
+	};
+
+	img.src = "mr_happy.jpg";
+*/
+	ctx.strokeRect(0, 0, c.width, c.height);
+	for (var i = 10; i < c.width; i += 10) {
+		ctx.beginPath();
+		ctx.moveTo(i, 0);
+		ctx.lineTo(i, 200);
+		ctx.stroke();
+		ctx.closePath();
+	}
+	for (var i = 10; i < c.height; i+= 10) {
+		ctx.beginPath();
+		ctx.moveTo(0, i);
+		ctx.lineTo(200, i);
+		ctx.stroke();
+		ctx.closePath();
+	}
+</script>
+</body>
+</html>
